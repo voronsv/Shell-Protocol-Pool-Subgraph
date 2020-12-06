@@ -1,0 +1,57 @@
+type _Approval @entity {
+  id: ID!
+  count: BigInt!
+  _owner: Bytes! # address
+  spender: Bytes! # address
+  value: BigInt!
+}
+
+type _AssetIncluded @entity {
+  id: ID!
+  count: BigInt!
+  numeraire: Bytes! # address
+  reserve: Bytes! # address
+  weight: BigInt!
+}
+
+type _AssimilatorIncluded @entity {
+  id: ID!
+  count: BigInt!
+  derivative: Bytes! # address
+  numeraire: Bytes! # address
+  reserve: Bytes! # address
+  assimilator: Bytes! # address
+}
+
+type _OwnershipTransfered @entity {
+  id: ID!
+  count: BigInt!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+}
+
+type _PartitionRedeemed @entity {
+  id: ID!
+  count: BigInt!
+  token: Bytes! # address
+  redeemer: Bytes! # address
+  value: BigInt!
+}
+
+type _Trade @entity {
+  id: ID!
+  count: BigInt!
+  trader: Bytes! # address
+  origin: Bytes! # address
+  target: Bytes! # address
+  originAmount: BigInt!
+  targetAmount: BigInt!
+}
+
+type _Transfer @entity {
+  id: ID!
+  count: BigInt!
+  from: Bytes! # address
+  to: Bytes! # address
+  value: BigInt!
+}
